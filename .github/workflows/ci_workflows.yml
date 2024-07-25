@@ -36,7 +36,7 @@ jobs:
         python -m pip install numpy astropy pytest-remotedata pytest-astropy-header
         python setup.py install
     - name: Test without remote data
-      run: pytest pysynphot_etc
+      run: pytest pysynphot
 
   coverage_dev_tests:
     runs-on: ubuntu-latest
@@ -57,7 +57,7 @@ jobs:
         python -m pip install -e .
     # NOTE: If TRDS cannot take the hit, disable --remote-data
     - name: Test with coverage, dev astropy, and remote data
-      run: pytest pysynphot_etc --cov=./ --cov-report=xml --remote-data
+      run: pytest pysynphot --cov=./ --cov-report=xml --remote-data
     - name: Coverage report
       uses: codecov/codecov-action@v3
       with:
