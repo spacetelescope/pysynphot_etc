@@ -247,7 +247,7 @@ class BaseObservationMode(object):
             if not line.startswith('#'):
                 tokens.append(line)
 
-        return N.float_(tokens)
+        return N.float64(tokens)
 
 
 class ObservationMode(BaseObservationMode):
