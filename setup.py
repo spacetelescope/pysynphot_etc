@@ -24,7 +24,7 @@ setup(
     python_requires='>=3.6,<3.12',
     install_requires=[
         'astropy',
-        'numpy<2',
+        'numpy',
         'beautifulsoup4',
         'six'
     ],
