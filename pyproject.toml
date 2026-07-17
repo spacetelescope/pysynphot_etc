@@ -22,11 +22,8 @@ dynamic = [
 
 [build-system]
 requires = [
-    "setuptools>=30.3.0",
+    "hatchling",
     "wheel",
     "numpy",
 ]
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["pysynphot"]
+build-backend = "hatchling.build"
