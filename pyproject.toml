@@ -1,17 +1,59 @@
 [project]
 name = "pysynphot"
 version = "2.0.1"
-dynamic = [
-    "description", 
-    "requires-python", 
-    "license", 
-    "authors", 
-    "classifiers", 
-    "dependencies"]
+description = "Python Synthetic Photometry Utilities"
+license = "BSD-3-Clause"
+authors = [ {name = 'Vicki Laidler'}, 
+            {name = 'Pey Lian Lim'}, 
+            {name = 'Matt Davis'}, 
+            {name = 'Robert Jedrzejewski'}, 
+            {name = 'Ivo Busko'}, 
+            {name = 'Isaac Spitzer'}]
+classifiers = [
+        "Intended Audience :: Science/Research",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Topic :: Scientific/Engineering :: Astronomy",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+    ]
+requires-python = ">=3.6,<3.15"
+dependencies = [
+    "numpy",
+    "astropy",
+    "beautifulsoup4",
+    "six"
+]
 
 [build-system]
 requires = [
-    "setuptools>=30.3.0",
+    "hatchling",
     "wheel",
-    "numpy",
 ]
+build-backend = "hatchling.build"
+
+[tool.coverage.run]
+omit = [
+  "pysynphot/__init__*",
+  "pysynphot/conftest.py",
+  "pysynphot/data/*",
+  "pysynphot/src/*",
+  "pysynphot/test/*",
+  "pysynphot/version*",
+  "pysynphot/spparser.py"]
+
+[tool.coverage.report]
+exclude_also = [
+  "pragma: no cover",
+  "except ImportError",
+  "raise AssertionError",
+  "raise NotImplementedError",
+  "def main\\(.*\\):",
+  "pragma: py{ignore_python_version}"]
+
+[tool.pytest.ini_options]
+  minversion = "4"
+  norecursedirs = ["build", "doc/build", "commissioning", "planning", "pysynphot/src"]
+  addopts = ["-p", "no:warnings"]
+  xfail_strict = true
+  astropy_header = true
+  filterwarnings = ["error"]
