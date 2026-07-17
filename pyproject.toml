@@ -1,12 +1,23 @@
 [project]
 name = "pysynphot"
 version = "2.0.1"
+description = "Python Synthetic Photometry Utilities"
+license = "BSD-3-Clause"
+authors = [ {name = 'Vicki Laidler'}, 
+            {name = 'Pey Lian Lim'}, 
+            {name = 'Matt Davis'}, 
+            {name = 'Robert Jedrzejewski'}, 
+            {name = 'Ivo Busko'}, 
+            {name = 'Isaac Spitzer'}]
+classifiers = [
+        "Intended Audience :: Science/Research",
+        "Operating System :: OS Independent",
+        "Programming Language :: Python",
+        "Topic :: Scientific/Engineering :: Astronomy",
+        "Topic :: Software Development :: Libraries :: Python Modules",
+    ]
+requires-python = ">=3.6,<3.15"
 dynamic = [
-    "description", 
-    "requires-python", 
-    "license", 
-    "authors", 
-    "classifiers", 
     "dependencies"]
 
 [build-system]
@@ -15,3 +26,7 @@ requires = [
     "wheel",
     "numpy",
 ]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["pysynphot"]
