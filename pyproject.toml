@@ -20,7 +20,8 @@ requires-python = ">=3.6,<3.15"
 dependencies = [
     "numpy",
     "astropy",
-    "beautifulsoup4"
+    "beautifulsoup4",
+    "six"
 ]
 
 [build-system]
