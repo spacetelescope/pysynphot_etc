@@ -25,6 +25,8 @@ requires = [
     "hatchling",
     "wheel",
     "numpy",
+    "astropy",
+    "beautifulsoup4"
 ]
 build-backend = "hatchling.build"
 
