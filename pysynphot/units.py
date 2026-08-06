@@ -2009,6 +2009,7 @@ class Counts(FluxUnits):
 ################   Factory for Units subclasses.   #####################
 def factory(uname, *args, **kwargs):
     unitsClasses = {'flam'      : Flam,
+                    'erg angstrom-1 s-1 cm-2': Flam,  # astropy.units standard format
                     'fnu'       : Fnu,
                     'photlam'   : Photlam,
                     'photnu'    : Photnu,
